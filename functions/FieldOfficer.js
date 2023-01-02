@@ -9,7 +9,13 @@ function onloadss(){
 
 
 
-    var caseid = $("#id1").val();
+    var caseid = $("#id1").val(); 
+    var FOAmount = $("#FOAmount").val();
+    var FORemarks2 = $("#FORemarks2").val();
+
+        
+
+
     var emailc = '';
     if($('#emailc').is(':checked') == true){emailc = 'Yes';}
     else {emailc = 'No';} 
@@ -321,7 +327,9 @@ function onloadss(){
                   Experiencec:Experiencec,
                   Capabilityc:Capabilityc,
                   Trainingc:Trainingc,
-                  OtherRemarksc:OtherRemarksc
+                  OtherRemarksc:OtherRemarksc,
+                  FOAmount:FOAmount,
+                  FORemarks2:FORemarks2
                   
      },
      dataType: "JSON",
@@ -364,6 +372,7 @@ function onloadss(){
 
 function switching(value) {
     $("#" + value + "-button").prop("disabled", false);
+
     if (value == "page1") {
         $("#page1").css("display", "inline");
         $("#page2").css("display", "none");
@@ -938,6 +947,8 @@ function btnsubmit() {
     var Capability = $("#Capability").val();
     var Training = $("#Training").val();
     var OtherRemarks = $("#OtherRemarks").val();
+
+
 
 
 

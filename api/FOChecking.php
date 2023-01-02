@@ -60,9 +60,14 @@ isset($_POST['Intensionc']) &&
 isset($_POST['Experiencec']) &&
 isset($_POST['Capabilityc']) &&
 isset($_POST['Trainingc']) &&
-isset($_POST['OtherRemarksc']) 
+isset($_POST['OtherRemarksc']) && 
+isset($_POST['FOAmount']) &&
+isset($_POST['FORemarks2']) 
 ) {
 	
+
+
+
 $caseid = htmlentities($_POST['caseid']);
 $emailc = htmlentities($_POST['emailc']);
 $fullnamec = htmlentities($_POST['fullnamec']);
@@ -121,8 +126,12 @@ $Intensionc = htmlentities($_POST['Intensionc']);
 $Experiencec = htmlentities($_POST['Experiencec']);
 $Capabilityc = htmlentities($_POST['Capabilityc']);
 $Trainingc = htmlentities($_POST['Trainingc']);
-$OtherRemarksc = htmlentities($_POST['OtherRemarksc']);
+$OtherRemarksc = htmlentities($_POST['OtherRemarksc']); 
+$FOAmount = htmlentities($_POST['FOAmount']);
+$FORemarks2 = htmlentities($_POST['FORemarks2']);
 $status = 'Validated';
+
+
 
 
 
@@ -156,13 +165,13 @@ $status = 'Validated';
 				`SecurityDepositPayable`, `PayableAmountCommittee`, `UtilityBillsPayable`,
 				`LoanPayable`,  `TotalDeductableLiabiliities`,
 				`NetCoutableAssets`, `CurrentZakatEvaluation`,`Muslim`,
-				`Syed`, `AgaKani`, `ZakatEvaluation`,`ExecutiveRelationship`, `ReferenceName`, `RefferedBy`, `Intension`, `Experience`, `Capability`, `Training`, `OtherRemarks`, `status` ) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+				`Syed`, `AgaKani`, `ZakatEvaluation`,`ExecutiveRelationship`, `ReferenceName`, `RefferedBy`, `Intension`, `Experience`, `Capability`, `Training`, `OtherRemarks`, `status`, `FOAmount`, `FORemarks2` ) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
 			$stmt->bind_param(
-				'ssssssssssssssssssssssssssssssssssssssssssssssssssssssssss',
+				'ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssis',
 				$caseid,$emailc, $fullnamec, $fathersnamec, $contactc, $cityc, $NetSalaryc, $cnicc, $Addressc, $casetypec, $natureofbusinessc, $otherbusinessc, $casedescc, $NoofMalesc, $NoofFemalesc, $NoofDependentsc, $NoofPersonEarningc, $FamilyIncomec, $MonthlyRationc, $MonthlyHealthCarec, $MonthlyEducationc, $OtherExpensesc, $TotalExpensesc, $MonthlySirplusdeficitc, $CashBankc, $GoldSilverc, $ProvisionalFundc, $PaidCommitteec, $SecurityDepositc, $LoanGivenc, $OtherCurrencyc, $TradeAssetsc, $UnnecessaryFlatsc, $ExtraMobilePhonesc, $ExtraVehiclesc, $ExtraLivestocksc, $TotalCountableAssetsc, $RentPayablec, $SecurityDepositPayablec, $PayableAmountCommitteec, $UtilityBillsPayablec, $LoanPayablec, 
 					$TotalDeductableLiabilitiesc,   
-					$NetCoutableAssetsc, $CurrentZakatEvaluationc, $Muslimc, $Syedc, $AgaKanic, $ZakatEvaluationc, $ExecutiveRelationshipc, $ReferenceNamec, $RefferedByc, $Intensionc, $Experiencec, $Capabilityc, $Trainingc, $OtherRemarksc, $status
-			);
+					$NetCoutableAssetsc, $CurrentZakatEvaluationc, $Muslimc, $Syedc, $AgaKanic, $ZakatEvaluationc, $ExecutiveRelationshipc, $ReferenceNamec, $RefferedByc, $Intensionc, $Experiencec, $Capabilityc, $Trainingc, $OtherRemarksc, $status,$FOAmount,$FORemarks2
+			);  
 			$stmt->execute();
 			if ($stmt == true) {
 					$result = "Inserted";

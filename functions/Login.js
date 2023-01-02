@@ -74,7 +74,7 @@ function login() {
                         .then(function () {
 
                             if (role == 'Field Officer') {
-                                window.location.href = 'FieldOfficer.php';
+                                window.location.href = 'FieldOfficer2.php';
                             } else if (role == 'Panel') {
                                 window.location.href = 'Panel.php';
                             } else if (role == 'Finance') {

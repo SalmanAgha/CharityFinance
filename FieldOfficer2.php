@@ -69,7 +69,7 @@
                             <thead>
                                 <tr>
                                     <th></th>
-                                    <th></th>
+                                 
                                     <th>CaseID</th>
                                     <th>DateOC</th>
                                     <th>Case Type</th>
